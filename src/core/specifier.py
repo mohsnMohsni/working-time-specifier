@@ -1,3 +1,4 @@
-from holiday import hd_arr
+from _calendar.manager import WorkingsDate
 
-print(hd_arr)
+
+print(WorkingsDate.retrive_working_dates())
