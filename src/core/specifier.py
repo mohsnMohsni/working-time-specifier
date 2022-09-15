@@ -1,2 +1,3 @@
-from ..holiday import hd_arr
+from holiday import hd_arr
+
 print(hd_arr)
