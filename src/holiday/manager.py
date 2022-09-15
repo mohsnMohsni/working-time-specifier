@@ -17,7 +17,7 @@ class JalaliHolidaysCalender:
         return jalali_holidays
 
     def wrtie_into_file(self) -> None:
-        with open('holiday/holidays.py', 'w') as hd:
+        with open('src/holiday/holidays.py', 'w') as hd:
             _import = 'import jdatetime\n\n\n'
             h_lists = self.retrive_jalali_holidays()
             assign_var = 'hd_arr = {}'.format(h_lists)
