@@ -1,0 +1,3 @@
+irholiday==0.1.8
+jdatetime==4.1.0
+pandas==1.4.4
