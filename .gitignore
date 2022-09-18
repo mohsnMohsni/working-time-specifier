@@ -4,3 +4,4 @@ venv/
 *.ipynb
 *.xlsx
 *.xls
+*.xlsx#
