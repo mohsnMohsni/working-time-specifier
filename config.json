@@ -1,0 +1,8 @@
+{
+    "xlsPath": "تخصیص.xlsx",
+    "mainSite": false,
+    "mag": false,
+    "managementPanel": false,
+    "workmanPanel": false,
+    "clientPanel": false
+}
