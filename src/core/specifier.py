@@ -17,15 +17,14 @@ def generate_random_specifie_time(branches_col: int = 10, sum_of_random: int = 8
     '''
 
     num_sum, numbers = int(), list()
-    for index in range(1, branches_col):
+    for index in range(branches_col):
         n = randint(0, sum_of_random - num_sum)
         numbers.append(n)
         num_sum += n
         if num_sum == sum_of_random:
-            numbers += [0] * (branches_col - index)
+            numbers += [0] * (branches_col - (index + 1))
             break
     shuffle(numbers)
-    print(numbers)
     return numbers
 
 
@@ -83,7 +82,7 @@ class XlsxHandler:
                 0: index,
                 4: r_jalalit_date.jweekday(),
                 5: r_jalalit_date.strftime("%Y.%m.%d"),
-                **dict(enumerate(work_branch_handler(self.conf), 6)),
+                **work_branch_handler(self.conf),
             }
 
     def init_xls(self) -> None:
