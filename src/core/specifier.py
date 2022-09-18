@@ -5,7 +5,7 @@ from random import randint, shuffle
 from jdatetime import date as j_date, set_locale
 from openpyxl import load_workbook
 
-from .._calendar.manager import WorkingsDate
+from _calendar.manager import WorkingsDate
 
 
 set_locale('fa_IR')
