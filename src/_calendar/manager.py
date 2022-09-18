@@ -3,7 +3,7 @@ from datetime import date
 import pandas as pd
 from irholiday import irHoliday
 
-from _calendar.holidays import jholidays, UPDATE_IN_YEAR
+from .holidays import jholidays, UPDATE_IN_YEAR
 
 
 CURRENT_YEAR = 1401
