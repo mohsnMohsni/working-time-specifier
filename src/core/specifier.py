@@ -28,12 +28,12 @@ def generate_random_specifie_time(branches_col: int = 10, sum_of_random: int = 8
     return numbers
 
 
-def work_branch_handler(conf: dict) -> list:
+def work_branch_handler(conf: dict, sum_of_random: int = 10) -> list:
     '''
     Read from conf to specify generated times should init into which branch of work.
     '''
 
-    _times = generate_random_specifie_time(sum(conf.values()) * 2)
+    _times = generate_random_specifie_time(sum(conf.values()) * 2, sum_of_random=sum_of_random)
     return {
         6: _times.pop() if conf['mainSite'] else 0,
         7: _times.pop() if conf['mainSite'] else 0,
@@ -77,12 +77,13 @@ class XlsxHandler:
         for d in rows_to_be_filled:
             r_jalalit_date = j_date.fromtimestamp(int(d.strftime('%s')))
             index += 1
+            sum_of_random = 8 if r_jalalit_date.jweekday() != 5 else 5
             yield {
                 **self.r_data,
                 0: index,
                 4: r_jalalit_date.jweekday(),
                 5: r_jalalit_date.strftime("%Y.%m.%d"),
-                **work_branch_handler(self.conf),
+                **work_branch_handler(self.conf, sum_of_random=sum_of_random),
             }
 
     def init_xls(self) -> None:
