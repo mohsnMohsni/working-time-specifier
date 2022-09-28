@@ -77,7 +77,7 @@ class XlsxHandler:
         for d in rows_to_be_filled:
             r_jalalit_date = j_date.fromtimestamp(int(d.strftime('%s')))
             index += 1
-            sum_of_random = 8 if r_jalalit_date.jweekday() != 5 else 5
+            sum_of_random = 8 if r_jalalit_date.weekday() != 5 else 5
             yield {
                 **self.r_data,
                 0: index,
